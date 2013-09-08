@@ -1,0 +1,20 @@
+PopulationStructure
+===================
+
+Personal notes and files pertaining to population structure
+
+
+Contents:  updated 7 September 2013
+
+
+PopStructure_PipelineNotes.txt  --  describes steps to follow when making visualizations from programs Structure or Tess
+
+Colors.R  --  create colors for the barplots, called within Plot.Q
+
+ReadQ.R  --  creates a function used in MakeBarPlots.R
+
+PlotQ.R  --  creates a function used in MakeBarPlots.R
+
+MakeBarPlots.R  --   script to create a bar plot using the example file provided
+
+K3_indfile  --  example file to use with MakeBarPlots.R

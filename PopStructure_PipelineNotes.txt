@@ -1,0 +1,47 @@
+## Notes on Structure/Tess to visualization pipeline
+
+
+
+# 1 Structure  http://pritch.bsd.uchicago.edu/software.html
+
+run analysis
+
+# 2 Structure harvester
+
+2 options: a. online or b. on personal machine
+
+  a. online: http://taylor0.biology.ucla.edu/structureHarvester/
+	upload zipped "results" folder from structure run
+	Harvester will output files for chosen K as well as to run through distruct
+
+  b. on personal machine (occasionally harvester website is down)
+	download and compile python code
+	run for same result as a.
+	
+  Next, run Clumpp to combine replicate runs
+  	run clumpp (available at http://www.stanford.edu/group/rosenberglab/clumpp.html ) on structure results to compile replicate runs
+  	edit the paramfile directly or use code below
+  	make popfile
+	  	./CLUMPP paramfile –p population input file, output from harvester –o designate output file –k # of clusters –c number of populations –r number of chains (reps)
+		  **NB In paramfile, change datatype to ‘1’ to designate population file
+	  make indfile
+		  ./CLUMPP paramfile –i individual input file, output from harvester –o designate output file –k # of clusters –c # of individuals –r # of chains
+		  **NB In paramfile, change datatype to ‘0’ to designate individual file
+	
+# 3 distruct
+
+program available at: http://www.stanford.edu/group/rosenberglab/distruct.html
+
+the above procedures will produce a popfile and an indfile for each K
+read these into distruct and run:
+	./distructMacOSX1.1 –K # clusters –M # pops –N # individuals –p population input file –i individual input file –o designate output file
+	
+	edit the drawparams file for visual settings
+	choose colors in "casia.perm"
+	designate names in "casia.names"
+
+
+# 4 Tess   http://membres-timc.imag.fr/Olivier.Francois/tess.html
+
+Tess has an option to directly output a clumpp file from runs for each K
+Do this then follow steps 2 and 3 above
