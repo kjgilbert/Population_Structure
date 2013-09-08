@@ -11,7 +11,7 @@ clumppfile <- "K3_indfile"
 read.q(clumppfile, clumpp=TRUE)
 
 #function to create the bar plot from the formatted data, uses PlotQ.R 
-plot.bars(bars, type="quartz")#, ax.lab=FALSE)
+plot.bars(bars, type="quartz", ax.lab=FALSE)  #axis labels can be added, that part of the code still needs work
 
 
 
